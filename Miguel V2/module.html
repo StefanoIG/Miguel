@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/module_styles.css">
+    <title>Módulo</title>
+</head>
+<body>
+ 
+  <main>
+    
+
+    <section class="unidad">
+        <nav>
+            <h2>UNIDAD 9: El hogar y la salud</h2>
+            <p>Deportes y ejercicios</p>
+        </nav>
+
+      <div class="unidad-info">
+        
+      </div>
+      <ul class="secciones-list">
+        <li class="seccion">
+          <ul class="lecciones-list">
+            <li class="leccion">
+              <h4>Lección 1</h4>
+              </div>
+            </li>
+            <li class="leccion">
+              <h4>Lección 2</h4>
+              </div>
+            </li>
+            <li class="leccion">
+              <h4>Lección 3</h4>
+              </div>
+            </li>
+            <li class="leccion">
+              <h4>Lección 4</h4>
+              </div>
+            </li>
+          </ul>
+
+          <ul>
+                <li class="leccion">
+                    <h4>Lección Principal</h4>
+                    <div class="leccion-info">
+                        <div class="progress-bar">
+                            <div class="progress" id="progress"></div>
+                        </div>
+                        <p class="tiempo-estimado">30 minutos</p>
+
+                        <a href="#">Iniciar</a>
+                    </div>
+                </li>
+
+                <li class="leccion">
+                    <h4>Writting</h4>
+                    <div class="leccion-info">
+                        <div class="progress-bar">
+                            <div class="progress" id="progress"></div>
+                        </div>
+                        <p class="tiempo-estimado">10 minutos</p>
+
+                        <a href="#">Iniciar</a>
+                    </div>
+                </li>
+
+                <li class="leccion">
+                    <h4>Lección Principal</h4>
+                    <div class="leccion-info">
+                        <div class="progress-bar">
+                            <div class="progress" id="progress"></div>
+                        </div>
+                        <p class="tiempo-estimado">5 minutos</p>
+
+                        <a href="#">Iniciar</a>
+                    </div>
+                </li>
+          </ul>
+        </li>
+      </ul>
+    </section>
+  </main>
+
+<script>
+
+    // Obtenemos la barra de progreso
+    const progressBar = document.getElementById('progress');
+
+    // Función para actualizar la barra de progreso
+    function updateProgress() {
+        let scrollableHeight = document.documentElement.scrollHeight - window.innerHeight;
+        let scrollTop = window.scrollY;
+        let progress = (scrollTop / scrollableHeight) * 100;
+        progressBar.style.width = progress + '%';
+    }
+
+    // Escuchamos el evento scroll para actualizar la barra de progreso
+    window.addEventListener('scroll', updateProgress);
+</script>
+
+</body>
+</html>
