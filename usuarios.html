@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+  <title>User Management</title>
+  <link rel="stylesheet" href="/css/dashboard.css">
+</head>
+<body>
+
+<div class="sidebar">
+  <h1>Dashboard</h1>
+  <ul>
+    <li onclick="goHome()"><i class="fas fa-home"></i> Home</li>
+    <li onclick="goUsers()"><i class="fas fa-users"></i> Users</li>
+    <li onclick="goModule()"><i class="fas fa-plus-circle"></i> Add Modules</li>
+    <li onclick="goEdit()"><i class="fas fa-edit"></i> Edit Modules</li>
+  </ul>
+</div>
+
+<div class="main-content">
+  <h2>User Management</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Username</th>
+        <th>Status</th>
+        <th>Last Seen</th>
+        <th>Progress</th>
+        <th>Plan Type</th>
+        <th>Role</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Ejemplo de fila de usuario -->
+      <tr>
+        <td>1</td>
+        <td>JohnDoe</td>
+        <td><span class="status connected"></span>Connected</td>
+        <td>10 mins ago</td>
+        <td>45%</td>
+        <td>Premium</td>
+        <td>User</td>
+        <td>
+          <i class="fas fa-edit action"></i>
+          <i class="fas fa-trash-alt action"></i>
+        </td>
+      </tr>
+      <!-- Repetir filas para cada usuario -->
+
+      <tr>
+        <td>2</td>
+        <td>Stefano</td>
+        <td><span class="status disconnected"></span>Disconnected</td>
+        <td>1000 mins ago</td>
+        <td>99%</td>
+        <td>ULTRAPREMIUM4KNOFAKE</td>
+        <td>SUPERIPERMEGAADMIN</td>
+        <td>
+          <i class="fas fa-edit action"></i>
+          <i class="fas fa-trash-alt action"></i>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- Paginación -->
+  <div class="pagination">
+    
+  </div>
+</div>
+
+<script src="/js/dashboard.js"></script>
+</body>
+</html>

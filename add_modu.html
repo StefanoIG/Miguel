@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+  <title>Añadir Módulo - Dashboard de Administración</title>
+  <link rel="stylesheet" href="/css/dashboard.css">
+</head>
+<body>
+
+<div class="sidebar">
+  <h1>Dashboard</h1>
+  <ul id="nav-list">
+    <li id="nav-home" onclick="goHome()"><i class="fas fa-home"></i> Home</li>
+    <li id="nav-users" onclick="goUsers()"><i class="fas fa-users"></i> Users</li>
+    <li id="nav-add-modules" onclick="goModule()"><i class="fas fa-plus-circle"></i> Add Modules</li>
+    <li id="nav-edit-modules" onclick="goEdit()"><i class="fas fa-edit"></i> Edit Modules</li>
+  </ul>
+</div>
+
+<div class="main-content">
+  <h2>Add New Module</h2>
+  <form id="module-form">
+    <div class="form-group">
+      <label for="module-title">Module Title</label>
+      <input type="text" id="module-title" class="form-control" placeholder="Enter module title" required>
+    </div>
+    <div class="form-group">
+      <label for="module-theme">Module Theme</label>
+      <select id="module-theme" class="form-control" required>
+        <option value="">Select Theme</option>
+        <option value="story">Story</option>
+        <option value="lessons">Lessons</option>
+        <option value="story-lessons">Story with Lessons</option>
+        <option value="listening">Listening</option>
+      </select>
+    </div>
+    <div id="additional-fields"></div>
+    <button type="submit" class="btn">Add Module</button>
+  </form>
+</div>
+<script src="JS/module-form.js"></script>
+<script src="JS/dashboard.js"></script>
+</body>
+</html>

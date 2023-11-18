@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <title>Edit Module Details - Administration Dashboard</title>
+    <link rel="stylesheet" href="/css/dashboard.css">
+</head>
+<body>
+
+<div class="sidebar">
+    <h1>Dashboard</h1>
+    <ul id="nav-list">
+        <li id="nav-home" onclick="goHome()"><i class="fas fa-home"></i> Home</li>
+        <li id="nav-users" onclick="goUsers()"><i class="fas fa-users"></i> Users</li>
+        <li id="nav-add-modules" onclick="goModule()"><i class="fas fa-plus-circle"></i> Add Modules</li>
+        <li id="nav-edit-modules" class="active" onclick="goEdit()"><i class="fas fa-edit"></i> Edit Modules</li>
+    </ul>
+</div>
+
+
+<div class="main-content">
+    <h2>Edit Module Details</h2>
+    <form id="module-form">
+        <!-- Similar structure to add_module.html but with pre-populated values -->
+        <div class="form-group">
+            <label for="module-title">Module Title</label>
+            <input type="text" id="module-title" class="form-control" placeholder="Enter module title" value="Existing Module Title" required>
+        </div>
+
+        <div class="form-group">
+            <label for="module-theme">Module Theme</label>
+            <select id="module-theme" class="form-control" required>
+              <option value="">Select Theme</option>
+              <option value="story" selected>Story</option>
+              <option value="lessons">Lessons</option>
+              <option value="story-lessons">Story with Lessons</option>
+              <option value="listening">Listening</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="listening-audio">Listening Audio</label>
+            <div class="uploaded-file">
+                <span id="file-name">test.mp3</span>
+                <label for="listening-audio" class="btn file-upload-btn">Change</label>
+                <input type="file" id="listening-audio" class="form-control file-input" accept="audio/*">
+            </div>
+        </div>
+        
+        <!-- ... other fields like theme selection ... -->
+        <div id="additional-fields">
+            <!-- Pre-existing questions go here -->
+            <!-- Simulate existing questions with static HTML or generate dynamically with JS -->
+            <div class="form-group question arriba">
+                <label for="question-1">Question 1</label>
+                <input type="text" id="question-1" class="form-control" value="What is the capital of France?" required>
+                <div class="choices">
+                    <div>
+                        <input type="radio" id="choiceA" name="answer" value="A" required>
+                        <label for="choiceA">A</label>
+                        <input type="text" class="form-control" value="Stalingrado" required>
+                    </div>
+                    <div>
+                        <input type="radio" id="choiceB" name="answer" value="B" required>
+                        <label for="choiceB">B</label>
+                        <input type="text" class="form-control" value="Paris" required>
+                    </div>
+                    <div>
+                        <input type="radio" id="choiceC" name="answer"  value="C" required checked>
+                        <label for="choiceC">C</label>
+                        <input type="text" class="form-control" aria value="Moscu" required>
+                    </div>
+                    <div>
+                        <input type="radio" id="choiceD" name="answer" value="D" required>
+                        <label for="choiceD">D</label>
+                        <input type="text" class="form-control" value="Leningrado" required>
+                    </div>
+                </div>
+            </div>
+            <!-- Pregunta 2 -->
+<div class="form-group question arriba">
+    <label for="question-2">Question 2</label>
+    <input type="text" id="question-2" class="form-control" value="What is the largest ocean?" required>
+    <div class="choices">
+        <div>
+            <input type="radio" id="choiceA-2" name="answer-2" value="A">
+            <label for="choiceA-2">A</label>
+            <input type="text" class="form-control" value="Atlantic Ocean">
+        </div>
+        <div>
+            <input type="radio" id="choiceB-2" name="answer-2" value="B" checked required>
+            <label for="choiceB-2">B</label>
+            <input type="text" class="form-control" value="Pacific Ocean">
+        </div>
+        <div>
+            <input type="radio" id="choiceC-2" name="answer-2" value="C">
+            <label for="choiceC-2">C</label>
+            <input type="text" class="form-control" value="Indian Ocean">
+        </div>
+        <div>
+            <input type="radio" id="choiceD-2" name="answer-2" value="D">
+            <label for="choiceD-2">D</label>
+            <input type="text" class="form-control" value="Arctic Ocean">
+        </div>
+    </div>
+</div>
+
+<!-- Pregunta 3 -->
+<div class="form-group question arriba">
+    <label for="question-3">Question 3</label>
+    <input type="text" id="question-3" class="form-control" value="Who wrote 'Romeo and Juliet'?" required>
+    <div class="choices">
+        <div>
+            <input type="radio" id="choiceA-3" name="answer-3" value="A" checked required>
+            <label for="choiceA-3">A</label>
+            <input type="text" class="form-control" value="William Shakespeare">
+        </div>
+        <div>
+            <input type="radio" id="choiceB-3" name="answer-3" value="B">
+            <label for="choiceB-3">B</label>
+            <input type="text" class="form-control" value="Charles Dickens">
+        </div>
+        <div>
+            <input type="radio" id="choiceC-3" name="answer-3" value="C">
+            <label for="choiceC-3">C</label>
+            <input type="text" class="form-control" value="Jane Austen">
+        </div>
+        <div>
+            <input type="radio" id="choiceD-3" name="answer-3" value="D">
+            <label for="choiceD-3">D</label>
+            <input type="text" class="form-control" value="Ernest Hemingway">
+        </div>
+    </div>
+</div>
+
+        </div>
+        <button type="submit" class="btn">Save Changes</button>
+    </form>
+</div>
+
+<script src="JS/edit-module-details.js"></script>
+<script src="JS/dashboard.js"></script>
+</body>
+</html>

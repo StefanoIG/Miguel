@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+  <title>Dashboard de Administración - Aprendizaje de Inglés</title>
+  <link rel="stylesheet" href="/css/dashboard.css">
+</head>
+<div class="sidebar" id="sidebar">
+    <h1 id="sidebar-title">Dashboard</h1>
+    <ul id="nav-list">
+      <li id="nav-home" onclick="goHome()"><i class="fas fa-home"></i> Home</li>
+      <li id="nav-users" onclick="goUsers()"><i class="fas fa-users"></i> Users</li>
+      <li id="nav-add-modules" onclick="goModule()"><i class="fas fa-plus-circle"></i> Add Modules</li>
+      <li id="nav-edit-modules" onclick="goEdit()"><i class="fas fa-edit"></i> Edit Modules</li>
+    </ul>
+  </div>
+  
+  <div class="main-content" id="main-content">
+    <h2 id="welcome-title">Welcome back, User!</h2>
+    <p id="account-overview">Here is the overview of your account:</p>
+    <div class="cards_container" id="cards-container">
+      <div class="card" id="total-users">
+        <h3>Total Users</h3>
+        <p>500</p>
+      </div>
+      <div class="card" id="new-users-today">
+        <h3>New Users Today</h3>
+        <p>50</p>
+      </div>
+      <div class="card" id="active-users">
+        <h3>Active Users</h3>
+        <p>350</p>
+      </div>
+    </div>
+
+    <div class="buttons-container">
+        <button class="btn" onclick="goUsers()" id="btn-edit-users"><i class="fas fa-user-edit"></i> Edit Users</button>
+        <button class="btn" onclick="goModule()" id="btn-add-modules"><i class="fas fa-plus-square"></i> Add Modules</button>
+        <button class="btn" onclick="goEdit()"  id="btn-edit-modules"><i class="fas fa-edit"></i> Edit Modules</button>
+      </div>
+</div>
+
+
+<script src="JS/dashboard.js"></script>
+
+  
+  </body>
+  </html>

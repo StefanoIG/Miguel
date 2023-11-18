@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Css/styles.css">
+    <title>Modulos</title>
+</head>
+<body>   
+    <header>
+        <div class="container">
+            <h1>Language Learning</h1>
+            <nav>
+                <ul>
+                    <li><a href="about.html">Sobre Nosotros</a></li>
+                    <li><a href="#">Contacto</a></li>
+                    <li><a href="/">Cerrar Sesion</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="dashboard">
+        <div class="module">
+            <h2>Módulo 1</h2>
+            <img src="ruta/imagen1.jpg" alt="Imagen Módulo 1">
+            <h3 class="Tema" id="">Tema del modulo:</h3>
+            <p>Descripción breve del Módulo 1.</p>
+        </div>
+
+        <div class="module">
+            <h2>Módulo 2</h2>
+            <img src="ruta/imagen2.jpg" alt="Imagen Módulo 2">
+            <h3 class="Tema" id="">Tema del modulo:</h3>
+            <p>Descripción breve del Módulo 2.</p>
+        </div>
+
+        <div class="module">
+            <h2>Módulo 3</h2>
+            <img src="ruta/imagen2.jpg" alt="Imagen Módulo 2">
+            <h3 class="Tema" id="">Tema del modulo:</h3>
+            <p>Descripción breve del Módulo 2.</p>
+        </div>
+        
+
+        <div class="module">
+            <h2>Módulo 4</h2>
+            <img src="ruta/imagen2.jpg" alt="Imagen Módulo 2">
+            <p>Descripción breve del Módulo 2.</p>
+        </div>
+
+        <div class="module">
+            <h2>Módulo 5</h2>
+            <img src="ruta/imagen2.jpg" alt="Imagen Módulo 2">
+            <p>Descripción breve del Módulo 2.</p>
+        </div>
+
+        <div class="module">
+            <h2>Módulo 6</h2>
+            <img src="ruta/imagen2.jpg" alt="Imagen Módulo 2">
+            <p>Descripción breve del Módulo 2.</p>
+        </div>
+    </div>
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const modules = document.querySelectorAll('.module');
+
+            modules.forEach(module => {
+                module.addEventListener('click', function() {
+                    window.location.href = 'module.html';
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>

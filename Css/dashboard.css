@@ -1,0 +1,395 @@
+.sidebar {
+    padding: 20px;
+    background: #2c3e50; /* Color oscuro para el contraste */
+    height: 100%;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    width: 200px; /* Ancho fijo para la barra lateral */
+    position: fixed; /* Fija la barra lateral en la pantalla */
+    top: 0; /* Alinea la barra lateral con la parte superior de la pantalla */
+    left: 0; /* Alinea la barra lateral con el lado izquierdo de la pantalla */
+    width: 200px; /* Establece un ancho fijo para la barra lateral */
+    height: 100%; /* Asegura que la altura sea del 100% de la vista de pantalla */
+    overflow-y: auto; /* Permite desplazarse dentro de la barra lateral si el contenido es muy largo */
+  }
+  
+  .sidebar h1 {
+    color: #fff;
+    font-size: 24px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: bold;
+    margin-bottom: 30px;
+  }
+  
+  .sidebar ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .sidebar ul li {
+    padding: 15px 0;
+    cursor: pointer;
+    color: #aab4be; /* Color claro para los elementos de la lista */
+    transition: background 0.3s, color 0.3s;
+  }
+  
+  .sidebar ul li i {
+    margin-right: 10px;
+    min-width: 20px; /* Asegura la alineación de los iconos */
+  }
+  
+  .sidebar ul li:hover {
+    background: #34495e; /* Color de hover para la lista */
+    color: #fff;
+  }
+  
+  .main-content {
+    flex-grow: 1;
+    padding: 40px;
+    margin-left: 250px; /* Asegúrate de que el contenido principal no se solape con la barra lateral fija */
+    background: #ecf0f1; /* Fondo claro para el contenido principal */
+  }
+  
+  .card {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+    margin-right: 20px;
+    transition: box-shadow 0.3s;
+  }
+  
+  .card:hover {
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+  }
+  
+  .card h3 {
+    margin-top: 10px;
+    font-size: 20px;
+    font-weight: normal;
+    color: #34495e; /* Color para los títulos de las tarjetas */
+  }
+  
+  .card p {
+    font-size: 40px;
+    margin: 20px 0;
+    font-weight: bold;
+    color: #2c3e50; /* Color para los números */
+  }
+  
+  /* Responsive design adjustments */
+  @media (max-width: 768px) {
+    .card {
+      width: calc(50% - 40px); /* Dos tarjetas por fila en pantallas más pequeñas */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .sidebar {
+      width: 100%; /* Barra lateral completa para dispositivos móviles */
+      height: auto;
+      position: relative;
+      box-shadow: none;
+      padding: 20px 10px;
+    }
+  
+    .main-content {
+      padding: 20px 10px;
+    }
+  
+    .card {
+      width: 100%; /* Una tarjeta por fila en pantallas muy pequeñas */
+      margin-bottom: 20px;
+    }
+  }
+  body {
+    display: flex; /* Esto asegura que los hijos directos estén en fila */
+    min-height: 100vh; /* Altura mínima para ocupar toda la altura de la ventana */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+     
+  }
+  
+  .sidebar {
+    /* Asegúrate de que el ancho del sidebar sea fijo y no crezca más allá de lo especificado */
+    flex: 0 0 200px; /* No crecer, no encogerse, ancho fijo de 200px */
+    background: #2c3e50;
+    padding: 20px;
+    height: 100vh; /* Altura completa */
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .main-content {
+    flex-grow: 1; /* Esto permite que main-content crezca y ocupe el espacio restante */
+    padding: 40px;
+    background: #ecf0f1;
+  }
+  
+/* Estilos para el contenedor de las tarjetas */
+.cards_container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Crea tres columnas con igual ancho */
+    grid-gap: 20px; /* Espacio entre las tarjetas */
+    margin-bottom: 20px; /* Espacio debajo del contenedor de tarjetas */
+  }
+
+  .btn {
+    padding: 10px 20px;
+    border: none;
+    background-color: #3498db; /* Azul claro atractivo */
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin-right: 10px; /* Espacio entre botones */
+  }
+  
+  .btn:hover {
+    background-color: #2980b9; /* Azul más oscuro para el estado hover */
+    transform: translateY(-2px); /* Efecto de elevación ligero */
+  }
+  
+  .btn:active {
+    background-color: #3498db;
+    transform: translateY(1px); /* Efecto de presión al hacer click */
+  }
+  
+  /* Asegúrate de que los botones no se peguen a la derecha en pantallas pequeñas */
+  @media (max-width: 768px) {
+    .btn {
+      margin-bottom: 10px; /* Espacio debajo de cada botón en pantallas pequeñas */
+      margin-right: 0;
+    }
+  }
+  
+  .buttons-container {
+    display: flex;
+    justify-content: center; /* Centra los botones horizontalmente */
+    align-items: center; /* Centra los botones verticalmente (si es necesario) */
+    flex-wrap: wrap; /* Permite que los botones se envuelvan en pantallas más pequeñas */
+    margin-top: 20px; /* Espacio arriba del contenedor de botones */
+  }
+  .form-group {
+    gap: 2px;
+    margin-bottom: 15px;
+  }
+
+  
+  .form-control,
+  .form-control:focus {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box; /* Asegura que el padding no afecte el ancho total */
+    margin-bottom: 1rem; /* Espacio después de cada input */
+    outline: none; /* Elimina el borde de foco predeterminado para inputs */
+  }
+  .form-group label {
+    display: block; /* Asegúrate de que las etiquetas sean bloque para mejorar la alineación */
+    margin-bottom: 0.5rem;
+    margin-top: 5px;
+    font-weight: 600; /* Hace que la etiqueta sea un poco más gruesa */
+  }
+    
+
+  .form-control:focus {
+    border-color: #0099ff; /* Cambia el color del borde al enfocarse */
+    box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.2); /* Agrega un sombreado sutil */
+  }
+  
+  /* Estilos para los radio buttons y sus etiquetas */
+  .choices {
+    display: grid;
+    grid-template-columns: repeat(4, max-content); /* Ajusta esto según tu diseño */
+    gap: 0.5rem 1.5rem; /* Espacio entre radio buttons y sus etiquetas */
+    align-items: center; /* Alinea los radio buttons y las etiquetas verticalmente */
+    margin-bottom: 1rem; /* Espacio después del conjunto de radio buttons */
+  }
+  
+  .choices label {
+    margin-left: 0.4rem; /* Espacio entre el radio button y la etiqueta */
+  }
+  
+  /* Estilos para el botón de envío */
+  .btn {
+    padding: 0.5rem 2rem;
+    /* Resto de estilos para el botón */
+  }
+  
+  /* Ajustes para el responsive design */
+  @media (max-width: 768px) {
+    .choices {
+      grid-template-columns: 1fr; /* Coloca radio buttons y etiquetas en una sola columna en dispositivos móviles */
+    }
+  
+    .form-control {
+      padding: 0.5rem; /* Reducir el padding para dispositivos móviles */
+    }
+  }
+  
+  .arriba{
+    border-top:#000000 double 5px;
+    margin: 5px;
+  }
+
+  /*Users*/
+  .status {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    margin-right: 5px;
+  }
+  
+  .connected {
+    background-color: #28a745; /* Verde para conectado */
+  }
+  
+  .disconnected {
+    background-color: #dc3545; /* Rojo para desconectado */
+  }
+  
+  .action {
+    cursor: pointer;
+    margin: 0 5px;
+  }
+  
+  .action:hover {
+    color: #3498db; /* Azul al pasar el cursor sobre el ícono */
+  }
+
+  
+  /* Estilos para la tabla */
+table {
+    width: 100%;
+    border-collapse: collapse; /* Elimina el espacio entre las celdas */
+    margin-top: 20px; /* Espacio por encima de la tabla */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave para la tabla */
+}
+
+th, td {
+    text-align: left;
+    padding: 12px 15px; /* Espaciado interno para las celdas */
+    border-bottom: 1px solid #ddd; /* Borde sutil para las filas */
+}
+
+th {
+    background-color: #007bff; /* Color de fondo para los encabezados de la tabla */
+    color: white; /* Texto blanco para los encabezados */
+    font-weight: bold;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2; /* Color de fondo alternativo para las filas pares */
+}
+
+tr:hover {
+    background-color: #ddd; /* Color de fondo al pasar el ratón por encima de las filas */
+}
+
+/* Paginación */
+.pagination {
+    display: flex;
+    justify-content: center; /* Centrar los controles de paginación */
+    margin-top: 20px; /* Espacio por encima de la paginación */
+}
+
+.pagination a {
+    margin: 0 5px;
+    text-decoration: none;
+    color: #007bff;
+}
+
+.pagination a.active {
+    font-weight: bold;
+}
+
+.pagination a:hover {
+    text-decoration: underline;
+}
+
+/* Si necesitas ajustar los estilos específicamente para SweetAlert, puedes aumentar la especificidad */
+.swal2-popup .form-input, .swal2-popup .form-select {
+    width: 100%;
+    padding: 0.5em;
+    margin: 0.5em 0;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/*Edit modules*/
+/* Base del contenedor de módulos */
+.modules-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+/* Estilos para las tarjetas de los módulos */
+.module-card {
+    flex: 1 1 calc(25% - 1rem); /* Ajusta la base para 4 módulos por fila, considerando el espacio entre tarjetas */
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden; /* Asegura que todo dentro de la tarjeta esté contenido */
+    margin-bottom: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Efecto al pasar el mouse por encima de la tarjeta */
+.module-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+}
+
+/* Encabezado de la tarjeta del módulo */
+.module-card h3 {
+    background-color: #0056b3; /* Color de fondo del encabezado */
+    color: white;
+    padding: 10px 15px;
+    margin: 0;
+}
+
+/* Descripción del módulo */
+.module-card p {
+    padding: 15px;
+    margin: 0;
+    color: #333;
+}
+
+/* Botón Editar dentro de la tarjeta */
+.module-card .edit-btn {
+    width: auto;
+    padding: 10px 15px;
+    background-color: #007bff; /* Color de fondo para botón */
+    color: white; /* Color de texto */
+    border: none;
+    border-radius: 0 0 8px 8px; /* Redondear solo las esquinas inferiores */
+    display: block;
+    text-align: center;
+}
+
+/* Ajusta el ancho de las tarjetas en pantallas más pequeñas */
+@media (max-width: 768px) {
+    .module-card {
+        flex: 1 1 calc(50% - 1rem); /* Dos tarjetas por fila en pantallas más pequeñas */
+    }
+}
+
+@media (max-width: 480px) {
+    .module-card {
+        flex: 1 1 100%; /* Una tarjeta por fila en pantallas muy pequeñas */
+    }
+}
+
+
+
