@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Language Learning</title>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Language Learning</h1>
+            <nav>
+                <ul>
+
+                    <li><a href="/">Inicio</a></li>
+                    <li><a href="about.html">Sobre Nosotros</a></li>
+                    <li><a href="#">Contacto</a></li>
+                    <li><a href="Log-Reg.html">Registro-Ingreso</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container-main">
+            <h2>Aprende Inglés con Nosotros</h2>
+            <p>Domina el idioma inglés con nuestro curso interactivo y fácil de seguir.</p>
+            <a href="#" class="btn btn-start">Comienza Ahora</a>
+        </div>
+    </section>
+
+    <section class="features">
+        <div class="container">
+            <h2>Características Destacadas</h2>
+            <div class="feature">
+                <img src="/img/icon1.png" alt="Icono 1">
+                <p>Lecciones interactivas y personalizadas.</p>
+            </div>
+            <div class="feature">
+                <img src="/img/icon2.png" alt="Icono 2">
+                <p>Profesores expertos y dedicados.</p>
+            </div>
+            <div class="feature">
+                <img src="/img/icon3.png" alt="Icono 3">
+                <p>Recursos multimedia para un aprendizaje efectivo.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonial">
+        <div class="container">
+            <h2>Lo que dicen nuestros estudiantes</h2>
+            <blockquote>
+                "Language Learning me ayudó a alcanzar mis metas de fluidez en inglés. ¡Altamente recomendado!"
+                <cite>- María G., Estudiante Satisfecha</cite>
+            </blockquote>
+        </div>
+    </section>
+
+    <section class="cta">
+        <div class="container">
+            <h2>¡Transforma tu vida con nuestro curso de inglés!</h2>
+            <a href="#" class="btn btn-start">Comienza Ahora</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 Language Learning</p>
+        </div>
+    </footer>
+
+
+    <script src="Js/general.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <script>
+         document.addEventListener('DOMContentLoaded', () => {
+    const planButtons = document.querySelectorAll('.btn-start'); // Selecciona todos los botones
+    planButtons.forEach(button => {
+        button.addEventListener('click', (e) => {
+            const planId = e.target.id; // Identifica qué botón fue clickeado
+            Swal.fire({
+                title: 'Select your plan',
+                html: `
+                    <div class="plan-selection">
+                        <div class="plan" data-plan="Basic">
+                            <h2>Basic</h2>
+                            <p>$29 / month</p>
+                            <p>720p Video Rendering</p>
+                            <p>2GB Cloud Storage</p>
+                            <p>Basic Video Templates</p>
+                        </div>
+                        <div class="plan" data-plan="Pro">
+                            <h2>Pro</h2>
+                            <p>$59 / month</p>
+                            <p>1080p Video Rendering</p>
+                            <p>10GB Cloud Storage</p>
+                            <p>Premium Video Templates</p>
+                            <p>Collaboration Tools</p>
+                        </div>
+                        <div class="plan" data-plan="Enterprise">
+                            <h2>Enterprise</h2>
+                            <p>$99 / month</p>
+                            <p>4K Video Rendering</p>
+                            <p>Unlimited Cloud Storage</p>
+                            <p>Custom Video Templates</p>
+                            <p>Advanced Collaboration Tools</p>
+                            <p>Dedicated Support</p>
+                        </div>
+                    </div>
+                `,
+                showCancelButton: true,
+                confirmButtonText: 'Select',
+                preConfirm: () => {
+                    const selectedPlan = document.querySelector('.plan-selection .plan[data-plan]');
+                    return selectedPlan ? selectedPlan.getAttribute('data-plan') : null;
+                }
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    localStorage.setItem('selectedPlan', result.value); // Guarda la selección en localStorage
+                    window.location.href = 'Log-Reg.html'; // Redirige al usuario
+                }
+            });
+            
+            // Resalta el plan seleccionado previamente
+            let selectedPlan = localStorage.getItem('selectedPlan');
+            if (selectedPlan) {
+                let planElement = document.querySelector(`.plan[data-plan="${selectedPlan}"]`);
+                if (planElement) {
+                    planElement.classList.add('selected');
+                }
+            }
+        });
+    });
+});
+
+    </script>
+    
+
+</body>
+</html>

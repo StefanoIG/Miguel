@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <title>Edit Modules</title>
+</head>
+<body>
+    <div class="sidebar">
+        <h1>Dashboard</h1>
+        <ul>
+          <li onclick="goHome()"><i class="fas fa-home"></i> Home</li>
+          <li onclick="goUsers()"><i class="fas fa-users"></i> Users</li>
+          <li onclick="goModule()"><i class="fas fa-plus-circle"></i> Add Modules</li>
+          <li onclick="goEdit()"><i class="fas fa-edit"></i> Edit Modules</li>
+        </ul>
+      </div>
+    
+      <div class="main-content">
+        <h2>Edit Modules</h2>
+        <div class="modules-container">
+            <!-- Módulo 1 -->
+            <div class="module-card">
+                <h3>Module 1</h3>
+                <p>Some description for module 1...</p>
+                <button class="edit-btn">Edit</button>
+            </div>
+            <!-- Módulo 2 -->
+            <div class="module-card">
+                <h3>Module 2</h3>
+                <p>Some description for module 2...</p>
+                <button class="edit-btn">Edit</button>
+            </div>
+            <!-- Módulo 3 -->
+            <div class="module-card">
+                <h3>Module 3</h3>
+                <p>Some description for module 3...</p>
+                <button class="edit-btn">Edit</button>
+            </div>
+            <!-- Módulo 4 -->
+            <div class="module-card">
+                <h3>Module 4</h3>
+                <p>Some description for module 4...</p>
+                <button class="edit-btn">Edit</button>
+            </div>
+        </div>
+    </div>
+    
+    <script src="/js/dashboard.js"></script>
+    </body>
+    </html>
